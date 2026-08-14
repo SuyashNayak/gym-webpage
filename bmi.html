@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator Engine</title>
+  <link rel="stylesheet" href="css/bmi.css">
+</head>
+<body>
+
+  <form class="c-bmi">
+    <label class="c-bmi__label">
+      <strong>Height</strong>
+      <output name="ho"></output>
+      <input class="c-bmi__range" type="range" name="h" min="150" max="230" step="0.5" value="180" />
+    </label>
+    
+    <label class="c-bmi__label">
+      <strong>Weight</strong>
+      <output name="wo"></output>
+      <input class="c-bmi__range" type="range" name="w" min="35" max="200" step="0.1" value="75" />
+    </label>
+    
+    <div class="c-bmi__result">Your BMI Is: <output name="r"></output></div>
+    
+    <div class="c-bmi__groups" readonly>
+      <input type="radio" id="bmi-g0" name="g" />
+      <label for="bmi-g0">Underweight</label>
+      <div class="c-bmi__group-text">A BMI of less than 18.5 indicates underweight status.</div>
+      
+      <input type="radio" id="bmi-g1" name="g" checked />
+      <label for="bmi-g1">Normal</label>
+      <div class="c-bmi__group-text">A BMI between 18.5 and 25 is considered a healthy, normal weight range.</div>
+      
+      <input type="radio" id="bmi-g2" name="g" />
+      <label for="bmi-g2">Pre-obesity</label>
+      <div class="c-bmi__group-text">A BMI between 25 and 30 falls into the pre-obesity/overweight spectrum.</div>
+      
+      <input type="radio" id="bmi-g3" name="g" />
+      <label for="bmi-g3">Obese I</label>
+      <div class="c-bmi__group-text">Class I Obesity (BMI 30–35).</div>
+      
+      <input type="radio" id="bmi-g4" name="g" />
+      <label for="bmi-g4">Obese II</label>
+      <div class="c-bmi__group-text">Class II Obesity (BMI 35–40).</div>
+      
+      <input type="radio" id="bmi-g5" name="g" />
+      <label for="bmi-g5">Obese III</label>
+      <div class="c-bmi__group-text">Class III severe obesity (BMI over 40).</div>
+    </div>
+  </form>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      function calculateBMI() {
+        const heightInput = document.querySelector('input[name="h"]');
+        const weightInput = document.querySelector('input[name="w"]');
+        const heightOutput = document.querySelector('output[name="ho"]');
+        const weightOutput = document.querySelector('output[name="wo"]');
+        const bmiOutput = document.querySelector('output[name="r"]');
+        const radioGroup = document.getElementsByName('g');
+
+        if (!heightInput || !weightInput || !heightOutput || !weightOutput || !bmiOutput) return;
+
+        const heightCm = heightInput.valueAsNumber;
+        const weightKg = weightInput.valueAsNumber;
+        
+        // Compute BMI score
+        const bmiScore = parseFloat(weightKg / ((heightCm / 100) ** 2)).toFixed(2);
+        
+        // WHO classification brackets
+        const brackets = [
+          [0, 18.49],    // Underweight
+          [18.5, 24.99], // Normal
+          [25, 29.99],   // Pre-obesity
+          [30, 34.99],   // Obese I
+          [35, 39.99],   // Obese II
+          [40, 100]      // Obese III
+        ];
+        
+        const targetIndex = brackets.findIndex(range => bmiScore >= range[0] && bmiScore <= range[1]);
+        
+        // Calculate clean imperial units conversion strings
+        let totalInches = (0.393700787 * heightCm).toFixed(0);
+        const feet = Math.floor(totalInches / 12);
+        const inches = totalInches % 12;
+        
+        // Print strings to screen outputs
+        heightOutput.textContent = heightCm + " cm / " + feet + "' " + inches + '\"';
+        weightOutput.textContent = weightKg + " kg / " + (2.2046 * weightKg).toFixed(1) + " lb";
+        bmiOutput.textContent = bmiScore;
+        
+        // Trigger active radio color check block
+        if (targetIndex !== -1 && radioGroup[targetIndex]) {
+          radioGroup[targetIndex].checked = true;
+        }
+      }
+
+      const bmiForm = document.querySelector('.c-bmi');
+      if (bmiForm) {
+        bmiForm.addEventListener('input', calculateBMI);
+        calculateBMI(); // Render initial state instantly
+      }
+    });
+  </script>
+</body>
+</html>

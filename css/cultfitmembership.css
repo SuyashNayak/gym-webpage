@@ -1,0 +1,308 @@
+/* ==========================================================================
+   CULT-FIT PREMIUM ELITE PLATFORM STYLES (Red-Hot & Jet-Black)
+   ========================================================================== */
+
+.cult-container {
+  background-color: #040404;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 80px;
+}
+
+/* 1. Immersive Elite Hero Content */
+.cult-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(4, 4, 4, 1)), url('../images/banner-new.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 130px 0 70px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 49, 49, 0.15);
+}
+
+.badge-elite {
+  background: linear-gradient(90deg, #FF3131, #b30000);
+  color: #fff;
+  display: inline-block;
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: 900;
+  border-radius: 30px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.cult-hero h1 {
+  font-size: 55px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+}
+
+.cult-hero h1 span {
+  color: #FF3131;
+}
+
+.cult-hero p {
+  color: #aaaaaa;
+  font-size: 18px;
+  line-height: 28px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* 2. Advantage Features Cluster */
+.cult-features {
+  padding: 40px 0;
+  background: #090909;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.cult-features .wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.c-feat-card {
+  flex: 1;
+  min-width: 220px;
+  background: #111111;
+  padding: 25px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  text-align: center;
+}
+
+.c-feat-card i {
+  font-size: 28px;
+  color: #FF3131;
+  margin-bottom: 12px;
+}
+
+.c-feat-card h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.c-feat-card p {
+  color: #888888;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 0;
+}
+
+/* 3. Package Price Presentation Grid */
+.cult-pricing {
+  padding: 80px 0 20px;
+}
+
+.pricing-headline {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.pricing-headline h2 {
+  font-size: 36px;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.pricing-headline h2 span {
+  color: #FF3131;
+}
+
+.pricing-headline p {
+  color: #888888;
+  font-size: 16px;
+}
+
+.pack-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.pack-card {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  flex: 1;
+  min-width: 300px;
+  max-width: 360px;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.pack-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 49, 49, 0.3);
+}
+
+/* Recommended Plan Enhancements */
+.pack-card.recommended {
+  border: 2px solid #FF3131;
+  background: #141414;
+  box-shadow: 0 20px 40px rgba(255, 49, 49, 0.08);
+}
+
+.card-ribbon {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FF3131;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 4px 14px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+/* Headers & Details */
+.pack-header {
+  padding: 35px 25px 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.pack-header h3 {
+  font-size: 26px;
+  font-weight: 900;
+  margin-bottom: 5px;
+  letter-spacing: 0px;
+}
+
+.pass-tag {
+  color: #FF3131;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.pack-body {
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.price-box {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.price-box .currency {
+  font-size: 24px;
+  font-weight: 700;
+  vertical-align: top;
+  margin-right: 2px;
+}
+
+.price-box .amount {
+  font-size: 42px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.price-box .slashed {
+  font-size: 16px;
+  color: #555555;
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+
+.monthly-breakdown {
+  text-align: center;
+  color: #0cb764; /* Cult-style green profit signal text */
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Feature Item Checkmarks */
+.perks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 35px 0;
+  flex-grow: 1;
+}
+
+.perks-list li {
+  font-size: 14px;
+  color: #cccccc;
+  margin-bottom: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.perks-list li i {
+  color: #0cb764;
+  margin-right: 10px;
+  margin-top: 3px;
+  font-size: 13px;
+}
+
+.perks-list li i.incomplete {
+  color: #444444;
+}
+
+/* Order Interaction Control */
+.buy-btn {
+  background: #ffffff;
+  color: #000000;
+  text-align: center;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 900;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+  display: block;
+}
+
+.pack-card.recommended .buy-btn {
+  background: #FF3131;
+  color: #ffffff;
+}
+
+.buy-btn:hover {
+  background: #e62c2c;
+  color: #ffffff;
+}
+
+.pack-card:not(.recommended) .buy-btn:hover {
+  background: #ffffff;
+  color: #FF3131;
+  box-shadow: 0 5px 15px rgba(255,255,255,0.05);
+}
+
+/* Layout Responsiveness Adaptations */
+@media (max-width: 992px) {
+  .cult-features .wrapper {
+    flex-direction: row;
+  }
+  .cult-hero h1 {
+    font-size: 38px;
+  }
+  .pack-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pack-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,171 @@
+/* ==========================================================================
+   PLANET-FITNESS INSPIRED COMPONENT LAYOUT (Red & Dark Fusion)
+   ========================================================================== */
+
+.pf-about-container {
+  background-color: #050505; /* Deep rich dark interface baseline */
+  padding-bottom: 60px;
+}
+
+/* 1. Header Hero Panel Setup */
+.pf-hero-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(5, 5, 5, 0.95)), url('../images/banner-new.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 120px 0 80px;
+  text-align: center;
+  border-bottom: 2px solid #FF3131;
+}
+
+.pf-hero-banner h1 {
+  font-size: 50px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.pf-hero-banner h1 span {
+  color: #FF3131; /* Bright Crimson Red Key Accent */
+}
+
+.pf-hero-banner p {
+  color: #cccccc;
+  font-size: 19px;
+  line-height: 32px;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* 2. Grid Cards System */
+.pf-value-grid {
+  padding: 80px 0;
+  background-color: #0a0a0a;
+}
+
+.pf-value-grid .wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.pf-card {
+  flex: 1;
+  min-width: 300px;
+  background-color: #121212;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-top: 4px solid #FF3131; /* Subtle warning line accent */
+  border-radius: 12px;
+  padding: 40px 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pf-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(255, 49, 49, 0.12);
+  border-color: rgba(255, 49, 49, 0.25);
+}
+
+.pf-icon-box {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(255, 49, 49, 0.08);
+  border-radius: 50%;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pf-icon-box i {
+  font-size: 36px;
+  color: #FF3131;
+}
+
+.pf-card h2 {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.pf-card p {
+  color: #aaaaaa;
+  font-size: 15px;
+  line-height: 26px;
+}
+
+/* 3. Split-Panel Row Presentation */
+.pf-story-split {
+  padding: 90px 0;
+  background-color: #050505;
+}
+
+.pf-story-left {
+  float: left;
+  width: 52%;
+  padding-right: 50px;
+}
+
+.pf-story-right {
+  float: right;
+  width: 48%;
+}
+
+.pf-story-left h3 {
+  color: #FF3131;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.pf-story-left h2 {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  color: #ffffff;
+}
+
+.pf-story-left h2 span {
+  color: #FF3131;
+}
+
+.pf-story-left p {
+  color: #cccccc;
+  font-size: 16px;
+  line-height: 28px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.pf-story-right img {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 49, 49, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive Viewports Framework Override */
+@media (max-width: 992px) {
+  .pf-story-left, .pf-story-right {
+    float: none;
+    width: 100%;
+    padding-right: 0;
+  }
+  .pf-story-right {
+    margin-top: 45px;
+  }
+  .pf-hero-banner h1 {
+    font-size: 36px;
+  }
+  .pf-value-grid .wrapper {
+    flex-direction: column;
+  }
+}

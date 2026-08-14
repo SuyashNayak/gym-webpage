@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: hsl(211, 20%, 92%) !important;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  /* overflow line removed so the calculator can breathe */
+}
+.c-bmi {
+  box-sizing: border-box;
+  padding: 2rem;
+  width: 100%;
+  max-width: 44rem;
+  margin: 0 auto;
+  color: #333333;
+}
+
+/* Explicit Block Layout for Labels */
+.c-bmi__label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  position: relative;
+  text-align: left;
+}
+
+/* Forces text values to show on the top right cleanly */
+.c-bmi__label output {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-weight: bold;
+  color: #1a237e;
+}
+
+.c-bmi__range {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  outline: none;
+  width: 100%;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.c-bmi__range::-webkit-slider-runnable-track {
+  background-image: linear-gradient(to bottom, transparent 45%, lightslategray 45%, lightslategray 55%, transparent 55%);
+  height: 2rem;
+}
+
+.c-bmi__range::-moz-range-track {
+  background-image: linear-gradient(to bottom, transparent 45%, lightslategray 45%, lightslategray 55%, transparent 55%);
+  height: 2rem;
+}
+
+.c-bmi__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: hsl(225,100%,20%);
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  margin-top: 0px;
+}
+
+.c-bmi__range::-moz-range-thumb {
+  appearance: none;
+  background-color: hsl(225,100%,20%);
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+}
+
+.c-bmi__result {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 1.5rem;
+  text-align: right;
+  font-weight: bold;
+}
+
+.c-bmi__groups {
+  border: 0;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 11px;
+  text-align: center;
+  width: 100%;
+}
+
+.c-bmi__groups label {
+  display: block;
+  padding: .6rem;
+  position: relative;
+  flex: 1;
+  font-weight: bold;
+}
+
+[for="bmi-g0"] { background-color: #4691e2; color: #fff; border-radius: .25rem 0 0 .25rem;}
+[for="bmi-g1"] { background-color: #0cb764; color: #fff;}
+[for="bmi-g2"] { background-color: #febf18; color: #000;}
+[for="bmi-g3"] { background-color: #fc8711; color: #fff;}
+[for="bmi-g4"] { background-color: #ff6455; color: #fff;}
+[for="bmi-g5"] { background-color: #cc1100; color: #fff; border-radius: 0 .25rem .25rem 0;}
+
+.c-bmi__group-text {
+  display: none;
+  font-size: 13px;
+  order: 2;
+  padding: 1rem 0 0 0;
+  text-align: left;
+  width: 100%;
+  color: #444444;
+  font-weight: normal;
+}
+
+.c-bmi__groups input:checked + label::before {
+  background-color: inherit;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  content: '';
+  display: inline-block;
+  height: 1rem;
+  left: 50%;
+  position: absolute;
+  top: -0.7rem;
+  transform: translateX(-50%);
+  width: 1.5rem;
+}
+
+.c-bmi__groups input:checked + label + div {
+  display: block;
+  flex: 0 0 100%;
+}
+
+.c-bmi [type="radio"] { display: none; }
