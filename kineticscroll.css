@@ -1,0 +1,70 @@
+/* Base Page Styling */
+body {
+  background-color: #050505;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Creates a massive empty space so you can actually scroll */
+.spacer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF3131;
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+/* The Grid holding the scrolling words */
+.list-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 50vh 0; 
+}
+
+/* The word "YOU CAN" that stays locked in place */
+.static-text {
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+  height: fit-content;
+  margin: 0;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* =========================================
+   THE ANIMATION STATES
+   ========================================= */
+
+/* 1. The default, dimmed state */
+.word {
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  opacity: 0.1;
+  color: white;
+  padding: 20px 0;
+  
+  /* This tells CSS to smoothly animate the change when JS adds the class */
+  transition: opacity 0.4s ease, color 0.4s ease, transform 0.4s ease;
+}
+
+/* 2. The active state (Triggered by our JavaScript) */
+.word.active {
+  opacity: 1;
+  color: #FF3131;
+  transform: scale(1.05); /* Slight pop out effect */
+}
